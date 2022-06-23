@@ -1,0 +1,154 @@
+//html 초기화
+
+
+
+/*==================================================================
+// 전체 폰트 사이즈
+//=================================================================*/
+
+html {font-size:1rem; font-family: "Spoqa Neo", "Apple Gothic", "Malgun Gothic", "맑은 고딕", 돋움, dotum, sans-serif; color:#333; word-break: keep-all; -webkit-font-smoothing: antialiased; }
+*{-webkit-font-smoothing: antialiased; }
+
+//STRING 내 br태그 적용
+span, p, div, li, dt, dd{ white-space: pre-line;}
+
+
+/*==================================================================
+// common layout
+//=================================================================*/
+
+// 모바일 높이값 100%
+.v-application--wrap {height: 100vh; height:calc(var(--vh, 1vh) * 100);min-height: 100vh;min-height:calc(var(--vh, 1vh) * 100); }
+
+// 앱 화면 100% 사이즈
+.container{height: calc(var(--vh, 1vh) * 100); padding:0px; margin : 0px; overflow-y: auto; }
+
+// header높이 제외
+.header-container {height: calc(var(--vh, 1vh) * 100 - 56px); margin : 0px; overflow-y: auto; overflow-x: hidden;}
+
+// header + footer 높이 제외
+.header-container-footer {height: calc(var(--vh, 1vh) * 100 - 56px - 48px); padding-bottom: 0px; margin : 0px; overflow-x: hidden; overflow-y: auto;}
+
+// footer 높이 제외
+.container-footer {height: calc(var(--vh, 1vh) * 100 - 48px); padding-bottom: 0px; margin : 0px; overflow-y: auto;}
+
+// header + footer(2개) 높이 제외
+// .header-container-footer2 {height: calc(var(--vh, 1vh) * 100 - 56px - 133px); padding-bottom: 0px; margin : 0px; overflow-y: auto;}
+
+// header + tab 높이 제외
+.header-container-tab {height: calc(var(--vh, 1vh) * 100 - 56px - 44px); margin : 0px; overflow-y: auto;}
+
+// header + tab + footer 높이 제외
+.header-container-tab-footer {height: calc(var(--vh, 1vh) * 100 - 56px - 44px - 48px); margin : 0px; overflow-y: auto;}
+
+//tab 높이 제외
+.container-tab{height: calc(var(--vh, 1vh) * 100 - 40px); margin : 0px; overflow-y: auto;}
+
+//container 여백
+.container-inner{padding:15px 15px 25px 15px !important;}
+
+//container내에 콘텐츠 여백
+.content-inner{padding:0 15px !important;}
+.content-inner2{padding:0 20px !important;}
+
+
+
+
+/*==================================================================
+// common class
+//=================================================================*/
+
+//hide_class
+.blind {font-size:0; line-height:0; width:1px; height:1px; overflow:hidden; position:absolute; border: 0;margin: -1px; padding: 0;}
+
+
+//텍스트 정렬
+.ta-c {text-align: center !important;}
+.ta-l {text-align: left !important;}
+.ta-r {text-align: right !important;}
+.va-t {vertical-align: top !important;}
+.va-m {vertical-align: middle !important;}
+
+
+//float
+.fl{float: left}
+.fr{float: right}
+.fn{float: none}
+.clear::after{content:''; display:block; clear:both;}
+
+
+//position
+.po-relative{position:relative;}
+.po-absolute{position:absolute;}
+.po-fixed{position:fixed;}
+
+
+//가로세로 가운데 정렬
+.po-center{position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);}
+
+
+//display
+.d-block{display:block;}
+.d-inline-block{display:inline-block;}
+
+
+//opacity
+.op1{opacity:0.3}
+.op2{opacity:0.5}
+.op3{opacity:0.8}
+.op4{opacity:1}
+
+//shadow
+.box{border-radius: 10px; margin: 15px; padding:20px; background: white; }
+.shadow{box-shadow: 3px 5px 11px 0 rgba(0, 0, 0, 0.06); margin-bottom: 15px;}
+
+
+//border
+.noline{border:none !important}
+.line{border: 1px solid #f4f4f4 !important;}
+.line-b{border-bottom:1px solid #f4f4f4 !important;}
+.line-t{border-top:1px solid #f4f4f4 !important;}
+
+//스크롤효과
+.sa {opacity: 0.4;transition: all .5s ease;}
+
+/* 아래에서 위로 페이드 인 */
+.sa-up {transform: translate(0, 25px);}
+.sa.show {opacity: 1;transform: none;}
+
+
+// font-size (fs1 -> 0.8rem)
+@for $i from 0 through 20 {
+	.fs-#{$i} {margin: $i*0.05rem+0.75rem !important}
+}
+
+// width
+@for $i from 0 through 200 {
+	.w-#{$i} {height: $i*1px !important}
+}
+
+// height
+@for $i from 0 through 200 {
+	.h-#{$i} {height: $i*1px !important}
+}
+
+// margin, padding
+@for $i from 0 through 100 {
+	.ma#{$i} {margin: $i*1px !important}
+	.mt#{$i} {margin-top: $i*1px !important}
+	.mr#{$i} {margin-right: $i*1px !important}
+	.mb#{$i} {margin-bottom: $i*1px !important}
+	.ml#{$i} {margin-left: $i*1px !important}
+	.mx#{$i} {margin-left: $i*1px !important; margin-right: $i*1px !important;}
+	.my#{$i} {margin-top: $i*1px !important; margin-bottom: $i*1px !important;}
+
+	.pa#{$i} {padding: $i*1px !important}
+	.pt#{$i} {padding-top: $i*1px !important}
+	.pr#{$i} {padding-right: $i*1px !important}
+	.pb#{$i} {padding-bottom: $i*1px !important}
+	.pl#{$i} {padding-left: $i*1px !important}
+	.px#{$i} {padding-left: $i*1px !important; padding-right: $i*1px !important;}
+	.py#{$i} {padding-top: $i*1px !important; padding-bottom: $i*1px !important;}
+
+	.rad#{$i} {border-radius: $i*1px !important;}
+}
